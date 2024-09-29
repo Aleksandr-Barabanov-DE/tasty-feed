@@ -1,0 +1,249 @@
+.timer {
+  position: absolute;
+  background-color: var(--timer-bg-color);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--list-gap);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 12;
+  position: fixed;
+  top: 20%;
+  min-height: 30vh;
+  overflow-y: auto;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--img-border-radius);
+  padding: var(--page--main-padding);
+}
+
+.timer-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--list-gap);
+  align-self: center;
+  width: 100%;
+  height: 400px;
+  background-color: var(--timer-bg-color);
+  border-radius: var(--timer-border-radius);
+  color: rgb(0, 0, 0);
+  font-size: clamp(2.5rem, 1.6071rem + 4.4643vw, 5.625rem);
+  border: 10px solid #2eacaa;
+  padding: var(--page--main-padding);
+  text-align: center;
+}
+
+.timer-heading {
+  display: flex;
+  justify-content: center;
+  font-size: clamp(1.25rem, 0.9821rem + 1.3393vw, 2.1875rem);
+}
+
+.input-wrapper,
+.time-wrapper-inner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-wrapper {
+  gap: 3vw;
+}
+
+.red {
+  background-color: var(--red-color);
+  color: var(--status-color);
+  border: 10px solid var(--red-color);
+  box-shadow: 0px 0px 30px var(--red-color);
+}
+
+.yellow {
+  background-color: var(--yellow-color);
+  color: var(--status-color);
+  border: 10px solid var(--yellow-color);
+  box-shadow: 0px 0px 30px var(--yellow-color);
+}
+
+.orange {
+  background-color: var(--orange-color);
+  color: var(--status-color);
+  border: 10px solid var(--orange-color);
+  box-shadow: 0px 0px 30px var(--orange-color);
+}
+
+.green {
+  background-color: var(--green-color);
+  color: var(--status-color);
+  border: 10px solid var(--green-color);
+  box-shadow: 0px 0px 30px var(--green-color);
+}
+
+.default {
+  background-color: var(--page-bg-color);
+  color: var(--main-font-color);
+}
+
+.timer-button,
+.timer-stop-button {
+  padding: 20px;
+  background-color: var(--timer-bg-color);
+  color: var(--main-font-color);
+  font-size: 20px;
+  border-radius: var(--img-border-radius);
+  text-transform: uppercase;
+  border: 1px solid var(--color-accent);
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.timer-button:hover,
+.timer-stop-button:hover {
+  border-color: var(--color-accent-active);
+}
+
+.timer-stop-button-active {
+  border-color: var(--color-accent-active);
+  color: var(--color-accent-active);
+}
+
+.timer-stop-button-active:hover {
+  color: var(--color-accent);
+}
+
+input {
+  font-family: "Playfair Display", serif;
+  padding: 10px 30px;
+  min-width: 10vw;
+  border-radius: 15px;
+  border: 1px solid var(--color-accent);
+  background-repeat: no-repeat;
+  background-position: 2px center;
+  background-size: 30px 30px;
+  font-size: clamp(0.9375rem, 0.8125rem + 0.625vw, 1.375rem);
+  text-align: start;
+}
+
+input:focus {
+  outline: 2px solid var(--color-accent-active);
+  border: 1px solid transparent;
+  box-shadow: 0 0 0 2px var(--color-accent-active);
+}
+
+.hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.timer-button-close {
+  align-self: flex-end;
+}
+
+.timer-active {
+  background-color: transparent;
+  border: none;
+  top: 20px;
+  right: 20px;
+  left: auto;
+  transform: none;
+  transition: all 0.5s ease-in-out;
+}
+
+h5 {
+  min-width: 50px;
+  text-align: start;
+}
+
+@media (max-width: 425px) {
+  .timer {
+    width: 80%;
+  }
+
+  .timer-active {
+    max-width: 65vw;
+    height: auto;
+    top: 0px;
+    right: 0px;
+  }
+
+  .timer-stop-button {
+    padding: 5px;
+  }
+
+  input {
+    min-width: 48%;
+    padding: 5px;
+  }
+  h5 {
+    min-width: 40px;
+    text-align: start;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 600px) {
+  .timer {
+    width: 60%;
+  }
+
+  .timer-active {
+    max-width: 55vw;
+    height: auto;
+    top: 0px;
+    right: 0px;
+  }
+  input {
+    min-width: 48%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1220px) {
+  .timer {
+    width: 45%;
+  }
+
+  .timer-active {
+    max-width: 55vw;
+    height: auto;
+    top: 5px;
+    right: 5px;
+  }
+
+  input {
+    min-width: 43%;
+  }
+  h5 {
+    min-width: 60px;
+    text-align: start;
+  }
+}
+
+@media (min-width: 1221px) {
+  .timer {
+    min-width: 450px;
+  }
+
+  .timer-active {
+    max-width: 55vw;
+    height: auto;
+    top: 5px;
+    right: 5px;
+  }
+  h5 {
+    min-width: 70px;
+  }
+}
+
+@media (max-width: 1220px) {
+  .timer-wrapper {
+    width: 100%;
+  }
+
+  .input-wrapper {
+    display: flex;
+  }
+}
